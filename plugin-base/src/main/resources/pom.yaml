@@ -1,0 +1,14 @@
+pom:
+  licenses:
+    license:
+      name: Apache License, Version 2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0.txt
+  developers:
+    developer:
+      id: chengzis
+      name: Cheng Zi
+      email: zhiainiwu@qq.com
+  scm:
+    url: https://github.com/chengzis/plugins
+    connection: scm:git:https://github.com/chengzis/plugins.git
+    developerConnection: scm:git:https://github.com/chengzis/plugins.git
