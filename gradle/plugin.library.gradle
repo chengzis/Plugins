@@ -1,0 +1,37 @@
+apply from: rootProject.file("gradle/library.gradle").absolutePath
+apply from: rootProject.file("gradle/publish.gradle").absolutePath
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+    withJavadocJar()
+    withSourcesJar()
+}
+
+def groupId = property("project.groupId").toString()
+def artifactId = property("project.artifactId").toString()
+
+group = "$groupId.$artifactId"
+version = property("project.version").toString()
+
+
+gradlePlugin {
+    plugins {
+        def name = property("project.name").toString()
+        register(name) {
+            id = group.toString()
+            implementationClass = "$group.$name"
+            displayName = name
+            description = property("project.description").toString()
+        }
+    }
+}
+
+
+dependencies {
+    def group = property("project.groupId").toString()
+    def version = property("project.version").toString()
+
+    api("$group:base:$version")
+
+}

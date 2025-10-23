@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+apply plugin: 'org.jetbrains.kotlin.jvm'
+apply plugin: 'java-gradle-plugin'
+apply plugin: 'org.gradle.kotlin.kotlin-dsl'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+    withJavadocJar()
+    withSourcesJar()
+}
+
+dependencies {
+    implementation(gradleApi())
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.22")
+    implementation("com.android.tools.build:gradle:8.1.0") // 如果需要与Android构建交互
+}

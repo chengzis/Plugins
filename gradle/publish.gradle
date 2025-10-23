@@ -1,0 +1,9 @@
+apply plugin: 'maven-publish'
+
+// 配置发布
+publishing {
+    repositories {
+        // 发布到 Maven Local (测试用)
+        mavenLocal()
+    }
+}
